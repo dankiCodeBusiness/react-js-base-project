@@ -1,5 +1,9 @@
 import styled, { createGlobalStyle } from 'styled-components'
 
+interface IContainerProps {
+    background: string
+}
+
 const GlobalStyle = createGlobalStyle`
   :root {
     --white: #ffffff;
@@ -16,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
 
     --blue: #1a325f;
     --blue-900: #020a19;
+    --blue-rgba: rgba(38, 178, 190, 0.2);
 
     --purple: #8789b9;
     --purple-100: #5e3ea1;
@@ -111,9 +116,22 @@ const GlobalStyle = createGlobalStyle`
     position: absolute;
     border-radius: 5px;
     inset: 40px;
-    overflow: auto;
+    overflow-y: auto;
+    
+    ::-webkit-scrollbar {
+      border-radius: 10px;
+      background-color: var(--blue);
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: var(--white);
+      border-radius: 10px;
+    }
 
-    @media(max-width: 480px) {
+    @media (max-width: 480px) {
       padding: 30px 20px;
     }
   }
@@ -135,12 +153,15 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const Container = styled.div`
+const Container = styled.div<IContainerProps>`
   background-color: var(--background);
+  background-image: url("${({background}) => background}");
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 100vh;
+  width: 100vw;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 150px;
+  place-items: center;
 `
 
 export { GlobalStyle, Container }
