@@ -33,6 +33,13 @@ export function Home() {
           Buy <FontAwesomeIcon icon={faEthereum} />
         </h2>
 
+        <form action="">
+          <div>
+            <input type="checkbox" id={'checkbox'} name={'checkbox'} value={'true'}/>
+            <label htmlFor="checkbox">Checkbox</label>
+          </div>
+        </form>
+
         <button type={'button'} onClick={handleOpenModal}>
           Open Modal
         </button>
