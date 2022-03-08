@@ -34,7 +34,11 @@ const GlobalStyle = createGlobalStyle`
     --green-100: #bde100;
     --green-200: #99d939;
     --green-300: #5a9418;
-    --green-400: #063b17;
+    
+    --green-400: #063b30;
+    --green-500: #7ec8cc;
+    --green-600: #4e9599;
+    --green-700: #27c1b1;
 
     --black: #111111;
     --black-rgba: rgba(0, 0, 0, .6);
@@ -117,15 +121,17 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 5px;
     inset: 40px;
     overflow-y: auto;
-    
+
     ::-webkit-scrollbar {
       border-radius: 10px;
       background-color: var(--blue);
       width: 10px;
     }
+
     ::-webkit-scrollbar-track {
       background-color: transparent;
     }
+
     ::-webkit-scrollbar-thumb {
       background-color: var(--white);
       border-radius: 10px;

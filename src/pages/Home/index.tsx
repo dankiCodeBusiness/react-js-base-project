@@ -35,14 +35,23 @@ export function Home() {
 
         <form action="">
           <div>
-            <input type="checkbox" id={'checkbox'} name={'checkbox'} value={'true'}/>
+            <input
+              type="checkbox"
+              id={'checkbox'}
+              name={'checkbox'}
+              value={'true'}
+            />
             <label htmlFor="checkbox">Checkbox</label>
           </div>
-        </form>
 
-        <button type={'button'} onClick={handleOpenModal}>
-          Open Modal
-        </button>
+          <button type={'button'} onClick={handleOpenModal}>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Open Modal
+          </button>
+        </form>
       </Container>
 
       <ModalDefault isOpen={isOpenModal} closeModal={handleCloseModal} />
